@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="output.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100 font-lato">
+    <div class="w-1/2 h-screen px-8 bg-white">
+        <!-- Logo Section -->
+        <div class="mb-1">
+            <img src="./assets/user authentication/insure-logo.png" alt="Insure Logo" class="">
+        </div>
+
+
+        <!-- Enter the Code -->
+        <div class="p-20 mb-4">
+            <p class="mb-4 text-4xl font-bold text-black ">Enter the code</p>
+            <p class="mb-16 text-sm ">Enter the OTP code that we sent to your email
+                <span class="font-bold">gt**@gmail.com</span>
+                . Be careful not to share the code with anyone.
+            </p>
+
+            <!-- OTP Boxes -->
+            <div class="flex mb-10 space-x-4">
+                <!-- Five small square boxes -->
+                <div class="w-16 bg-gray-300 rounded h-14"></div>
+                <div class="w-16 bg-gray-300 rounded h-14"></div>
+                <div class="w-16 bg-gray-300 rounded h-14"></div>
+                <div class="w-16 bg-gray-300 rounded h-14"></div>
+                <div class="w-16 bg-gray-300 rounded h-14"></div>
+            </div>
+
+            <!-- Verify Email Button -->
+            <button class="block w-10/12 py-2 mb-2 text-white bg-orange-500 rounded px-14 hover:bg-orange-600">Verify
+                Email</button>
+
+            <!-- Resend OTP Link -->
+            <p class="pl-3 text-sm font-medium text-black ml-72">
+                <a href="#" class=" hover:underline">Resend OTP</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Right-hand Side Image -->
+    <div class="w-1/2 h-screen bg-center bg-cover" style="background-image: url('./assets/user authentication/insure-otp-image.png');">
+    </div>
+</body>
+
+</html>

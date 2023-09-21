@@ -1,0 +1,33 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap');
+
+/* talwind configuration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* global styling */
+:root {
+  /* insure color */
+  --Orange1: #e76927;
+  --Orange2: #ffa074;
+  --Orange3: #ff8c69;
+  --Orange4: #ff4500;
+  --Orange5: #ff7f50;
+  --Blue0: #0f4c81;
+  --Blue1: #4169e1;
+  --Blue2: #1e90ff;
+  --Blue3: #6495ed;
+  --Blue4: #0000ff;
+  --Blue5: #00008b;
+  --White0: #ffffff;
+  --White1: #f5f5f5;
+  --White2: #ececec;
+  --White3: #d3d3d3;
+  --White4: ##c0c0c0;
+  --White5: #a9a9a9;
+}
+
+/* font: to use your font call the class font-Lato */
+

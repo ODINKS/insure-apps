@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="" rel="stylesheet" />
+    <title>INsure Sales Management Tool</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="https://kit.fontawesome.com/7e09908c25.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav
+      class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md font-Lato"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0"
+      >
+        <img src="./assets/Insure/1.png" class="h-20 mr-2" alt="Logo" />
+
+        <button
+          id="navbar-toggle"
+          data-collapse-toggle="navbar-dropdown"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[--Orange2] dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-dropdown"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul
+            class="flex flex-col lg:items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[--Orange2] md:hover:bg-transparent md:border-0 md:hover:text-[--Orange2] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./HTML/about.html"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[--Orange2] md:hover:bg-transparent md:border-0 md:hover:text-[--Orange2] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[--Orange2] md:hover:bg-transparent md:border-0 md:hover:text-[--Orange2] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="./HTML/pricing.html"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[--Orange2] md:hover:bg-transparent md:border-0 md:hover:text-[--Orange2] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[--Orange2] md:hover:bg-transparent md:border-0 md:hover:text-[--Orange2] md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+              >
+                Features
+                <svg
+                  class="w-2.5 h-2.5 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="absolute z-10 hidden font-normal bg-white divide-y divide-[--Orange2] rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-[--Orange2] dark:hover:bg-gray-600 dark:hover:text-white"
+                      >feature1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-[--Orange2] dark:hover:bg-gray-600 dark:hover:text-white"
+                      >feature2</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <div class="flex flex-wrap md:flex-col lg:flex-row ">
+                <button
+                  class="bg-[--White0] border border-[--Orange1] text-[--Orange1] font-bold py-3 px-6 rounded-[8px] text-bold text-sm m-2"
+                >
+                  Log-In
+                </button>
+                <button
+                  class="bg-[--Orange1] text-white font-bold py-3 px-6 rounded-[8px] text-bold text-sm m-2"
+                >
+                  Get Started
+                </button>
+              </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="lg:object-cover lg:object-center bg-cover bg-center lg:h-[80vh] h-[70vh] w-[100%] bg-[#433A3A] flex flex-col mb-12 bg-blend-overlay p-6" id="hero-section">
+        <div class="my-auto lg:ml-[100px] text-white">
+          <h1 class="lg:text-[4rem] text-[2.5rem] font-[700]">Welcome to INsure</h1>
+          <p class="lg:text-[1.4rem] text-[1rem] mb-4 lg:w-[50%] w-[100%]" id="description">...your Key to Insurance Sales Excellence. Elevate your agency's performance, close more deals, and boost profits with our cutting-edge sales management tool</p>
+          <button class="border border-white px-6 py-4 my-4 rounded-[8px] lg:w-[20%]  hover:bg-[--Orange5] hover:border-[--Orange5]">About Us</button>
+        </div>  
+      </section>
+        <section class="flex lg:flex-row flex-col w-[90%] mx-auto justify-between items-center my-10 p-4">
+          <div class="lg:w-[60%] w-[100%] mb-6 lg:mb-0" data-aos="fade-right" data-aos-delay="50"
+          data-aos-duration="2000">
+          <img src="assets/home/dashboard.svg" alt="">
+          </div>
+          <div class="lg:w-[35%] w-[100%] mb-2">
+              <h2 class="lg:text-[2.5rem] text-[2rem] font-[700]">Meet INsure for Enterprise</h2>
+              <p class="my-4">Our cutting-edge sales management tool is designed to empower insurance professionals, brokers, and agencies with the tools they need to thrive in a rapidly evolving industry. 
+              </p>
+              <p>Say goodbye to manual paperwork, data chaos, and missed opportunities. Say hello to streamlined workflows, data-driven decisions, and unprecedented growth.</p>
+          </div>
+      </section>
+      <section class="bg-[#F0F4FF] py-6">
+        <div class=" w-[90%] mx-auto ">
+        <div>
+          <div class="flex lg:flex-row flex-col justify-between items-center my-10 p-4">
+            <div class="lg:w-[35%] w-[100%] bg-white p-2 mb-6 lg:mb-0" data-aos="flip-left" data-aos-delay="50"
+            data-aos-duration="2000">
+            <img src="assets/home/agent-report.svg" alt="">
+            </div>
+            <div class="lg:w-[60%] w-[100%] mb-2">
+                <h2 class="lg:text-[2.5rem] text-[2rem] font-[700]">INsure: The Future-Proof Solution for Insurance Pros</h2>
+                <p class="my-4">INsure redefines the insurance industry by providing a comprehensive sales management tool built exclusively for enterprises.
+                </p>
+                <p>It's the ultimate companion for insurance professionals, brokers, and agencies, offering relief from tedious paperwork, data confusion, and missed potential.</p>
+            </div>
+        </div>    
+      </div>
+      <div class="flex lg:flex-row flex-col justify-between items-center my-10 p-4">
+        <div class="lg:w-[55%] w-[100%] mb-2 lg:order-1 order-2">
+            <h2 class="lg:text-[2.5rem] text-[2rem] font-[700]">Teams large and small rely on INsure</h2>
+            <p class="my-4">Visualize your sales pipeline like never before. INsure provides a clear and customizable overview of your entire sales process, allowing you to identify bottlenecks, target high-potential leads, and make data-driven decisions to expedite deals.</p>
+        </div>
+        <div class="lg:w-[40%] w-[100%] mb-6 lg:mb-0 lg:order-2 order-1"  data-aos="zoom-in-up" data-aos-delay="50"
+        data-aos-duration="2000">
+            <img src="assets/home/image.svg" alt="">
+        </div>
+    </div>
+    <div class="flex lg:flex-row flex-col justify-between items-center my-10 p-4">
+        <div class="lg:w-[35%] w-[100%] bg-white p-2 mb-6 lg:mb-0" data-aos="zoom-in-down" data-aos-delay="50"
+        data-aos-duration="2000">
+        <img src="assets/home/admin-d-team.svg" alt="">
+        </div>
+        <div class="lg:w-[60%] w-[100%] mb-2">
+            <h2 class="lg:text-[2.5rem] text-[2rem] font-[700]">Seize the Future of Insurance Sales</h2>
+            <p class="my-4">IINsure is your key to unlocking the potential of the insurance industry. With a focus on enterprise-level solutions, this platform empowers insurance professionals, brokers, and agencies to stay ahead in a rapidly changing field. Bid farewell to manual paperwork, data disarray, and missed opportunities.
+            </p>
+        </div>
+    </div>
+      <div class="my-8 p-4"> 
+        <h3 class="lg:text-right text-center lg:text-[2.5rem] text-[2rem] font-[700]">What Stands Us Out</h3>
+        <div class="flex lg:flex-row flex-col justify-between items-center my-8 lg:h-[50vh] h-auto">
+            <div class="bg-white rounded-[13px] py-4 font-[700] lg:w-[31%] w-[100%] mb-4 self-baseline" data-aos="zoom-out" data-aos-delay="50"
+            data-aos-duration="2000">
+                <img src="assets/home/support.svg" alt="" class="object-cover object-center h-[250px]">
+                <p class="text-[1.3rem] text-center p-2">Customer Support</p>
+            </div>
+            <div class="bg-white rounded-[13px] py-4 font-[700] lg:w-[31%] w-[100%] mb-4 self-center" data-aos="zoom-out-up" data-aos-delay="50"
+            data-aos-duration="2000">
+                <img src="assets/home/security.svg" alt="" class="object-cover object-center h-[250px]">
+                <p class="text-[1.3rem] text-center p-2">Data Security</p>
+            </div>
+            <div class="bg-white rounded-[13px] py-4 font-[700] lg:w-[31%] w-[100%] mb-4 self-end" data-aos="zoom-out-down" data-aos-delay="50"
+            data-aos-duration="2000">
+                <img src="assets/home/scalability.svg" alt="" class="object-cover object-center h-[250px]">
+                <p class="text-[1.3rem] text-center p-2">Scalability</p>
+            </div>
+        </div>
+    </div>
+  </div>
+      </section>
+      <section class="flex flex-col items-center w-[90%] px-4 py-24 mx-auto"> 
+        <h3 class="text-center lg:text-[2.5rem] text-[2rem] font-[700] my-4">Frequently Asked Questions</h3>
+        <div class="w-[100%] my-8">
+          <details>
+            <summary class="font-semibold text-[1.2rem] p-4 cursor-pointer border-b border-t">Does the app provide real-time policy updates and alerts?</summary>
+            <div class="bg-[#F0F4FF]">
+                <p class="leading-6 p-4">
+                  Yes, INsure offers real-time policy updates and alerts, ensuring that insurance sales professionals stay informed and responsive to policy changes, making it a valuable tool for effective insurance sales management.
+                </p>
+            </div>
+        </details>
+        <details>
+          <summary class="font-semibold text-[1.2rem] p-4 border-b cursor-pointer">How does the app help with lead management?</summary>
+          <div class=" bg-[#F0F4FF]">
+              <p class="leading-6 p-4">
+                INsure excels in lead management by offering a robust suite of tools, including lead capture, segmentation, and tracking features. This enables insurance professionals to efficiently capture and organize leads, making it easier to monitor and nurture prospective clients throughout the sales process
+              </p>
+          </div>
+      </details>
+      <details>
+        <summary class="font-semibold text-[1.2rem] p-4 border-b cursor-pointer">What is the pricing structure for this app?</summary>
+        <div class=" bg-[#F0F4FF]">
+            <p class="leading-6 p-4">
+              The pricing structure for INsure is designed to offer flexibility and cater to the diverse needs of insurance professionals and teams. For specific pricing details, including package options, features, and subscription plans, we recommend visiting our dedicated "Price" page on our website
+            </p>
+        </div>
+      </details>
+      <details>
+        <summary class="font-semibold text-[1.2rem] p-4 border-b cursor-pointer">Is there a free trial available to test the app's features?</summary>
+        <div class=" bg-[#F0F4FF]">
+            <p class="leading-6 p-4">
+              Yes, INsure offers a generous 7-day free trial that allows you to fully explore and test the app's features. This trial period gives you the opportunity to experience the capabilities and benefits of INsure, ensuring that it meets your needs before making a commitment. 
+            </p>
+        </div>
+    </details>
+    <details>
+      <summary class="font-semibold text-[1.2rem] p-4 border-b cursor-pointer">Can INsure integrate with third-party CRM systems?</summary>
+      <div class="bg-[#F0F4FF]">
+          <p class="leading-6 p-4">
+            Currently, INsure does not support integration with third-party CRM systems. However, we are continuously expanding our features, so stay tuned for potential future updates in this regard.
+          </p>
+      </div>
+  </details>
+      </div>
+      </section>
+      <section class="bg-[#F0F4FF] px-4 py-16" id="contact">
+        <h3 class="text-center text-[2.5rem] font-[700]">Contact Us</h3>
+        <div class="flex flex-col lg:flex-row lg:w-[80%] w-[100%] mx-auto my-12 justify-between bg-white lg:p-8 rounded-[8px]">
+        <div class="bg-cover bg-center lg:h-[60vh] h-[50vh] w-[100%] lg:w-[40%] rounded-md lg:p-6 mb-6 lg:mb-0" style="background-image: url('assets/home/bg-contact.svg');">
+          <div class="text-white p-4"> 
+            <h3 class="font-[700] text-[2rem]">Contact Information</h3>
+            <p>Stay in touch and send us a message.</p>
+            <div class="mt-12">
+              <p class="my-4"><i class="fa fa-phone-volume"></i> +234 70000000</p>
+              <p class="my-4"><i class="fa fa-envelope"></i> insure@gamil.co.ng</p>
+              <p class="my-4"><i class="fa fa-map-pin"></i> 132 Eric Moore Street Costain, Lagos state, Nigeria.</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-[100%] lg:w-[55%] p-4 lg:p-0">
+            <div class="flex flex-col lg:flex-row justify-between mb-4">
+                <label for="" class="lg:w-[45%] w-[100%]">First Name<input class="block border-b border-b-black mb-4 w-[100%]  focus:outline-none py-2" type="text" placeholder="Effiong"></label>
+                <label for="" class="lg:w-[45%] w-[100%]">Last Name<input class="block border-b border-b-black mb-4 w-[100%] focus:outline-none py-2" type="text" placeholder="Okwong"></label>      
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between mb-4">
+                <label for="" class="lg:w-[45%] w-[100%]">Email<input class="block border-b border-b-black mb-4 w-[100%]  focus:outline-none py-2" type="text" placeholder="effiong@outlook.com"></label>
+                <label for="" class="lg:w-[45%] w-[100%]">Phone Number<input class="block border-b border-b-black mb-4 w-[100%] focus:outline-none py-2" type="text" placeholder="+234 7089345678"></label>      
+            </div>
+            <div class="mb-4">
+                <p class="font-[700] my-4">Select query</p>
+                <label for="" class="mr-4"><input type="radio"> Sales</label>
+                <label for="" class="mr-4"><input type="radio"> Onboarding</label>
+                <label for="" class="mr-4"><input type="radio"> Operations</label>
+                <label for="" class="mr-4"><input type="radio"> Penalties</label>
+            </div>
+            <textarea name="" id="" class="border-b border-b-black mb-4 w-[100%] mt-6 focus:outline-none py-2">Your Message</textarea>
+            <button
+            class="bg-[#031B4E] text-white font-bold py-3 px-6 rounded-[8px] text-bold text-sm lg:w-[40%] w-[100%]"
+          >
+            Send Message
+          </button>
+        </div>
+      </div>
+      </section>
+    </main>
+    <footer>
+      <div class="bg-[--White0] w-full font-Lato m-auto flex flex-wrap justify-center items-center">
+        <!-- upper footer -->
+        <div
+          class="bg-[--Orange5] w-full rounded-b-[50px] flex flex-wrap flex-col justify-center items-center text-center py-16"
+        >
+          <!-- text div -->
+          <div class="pb-3">
+            <h2 class="text-[30px] font-semibold">
+              Welcome to your new digital HQ
+            </h2>
+          </div>
+          <!-- button div -->
+          <div>
+            <!-- first button -->
+            <button
+              class="bg-[--White0] text-black font-bold py-3 px-6 rounded-[8px] text-bold text-sm m-2"
+            >
+              7DAY TRIAL
+            </button>
+            <!-- second button -->
+            <!-- first button -->
+            <button
+              class="bg-slate-800 text-white font-bold py-3 px-8 rounded-[10px] text-bold text-sm m-2"
+            >
+              TALK TO SALES
+            </button>
+          </div>
+        </div>
+
+        <!-- lower footer -->
+
+        <div
+          class="max-w-[90%] m-auto grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 lg:gap-36 mt-10 md:gap-x-20 md:gap-y-4 sm:gap-12 sm:items-center sm:justify-center"
+        >
+          <!-- logo grid -->
+          <div class="max-w-[230px] pb-10">
+            <img src="./assets/Insure/1.png" alt="logo" />
+
+            <!-- icons socials -->
+            <div class="flex py-4 justify-center lg:justify-start">
+              <ul class="flex">
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
+                  >
+                    <i class="fa fa-twitter" style="color: #e76927"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
+                  >
+                    <i class="fa fa-instagram" style="color: #e76927"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
+                  >
+                    <i class="fa fa-facebook-square" style="color: #e76927" aria-hidden="true"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="h-10 w-10 rounded-full hover:bg-[##c0c0c0] flex items-center justify-center cursor-pointer"
+                  >
+                    <i class="fa fa-youtube-play" style="color: #e76927" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- why insure grid -->
+
+          <ul class="max-w-[230px] pb-10">
+            <h3 class="py-3 text-[#E76927] font-bold">WHY INSURE?</h3>
+            <li class="py-[10px] px-0 text-sm">Technology</li>
+            <li class="py-[10px] px-0 text-sm">Productivity</li>
+            <li class="py-[10px] px-0 text-sm">Onboarding</li>
+          </ul>
+
+          <!-- product grid -->
+
+          <ul class="max-w-[230px] pb-10">
+            <h3 class="py-3 text-[#E76927] font-bold">PRODUCT</h3>
+            <li class="py-[10px] px-0 text-sm">Dashboard</li>
+            <li class="py-[10px] px-0 text-sm">Dashboard</li>
+            <li class="py-[10px] px-0 text-sm">On the go Mobility</li>
+          </ul>
+
+          <!-- price grid -->
+
+          <ul class="max-w-[230px] pb-10">
+            <h3 class="py-3 text-[#E76927] font-bold">PRICING</h3>
+            <li class="py-[10px] px-0 text-sm">Paid</li>
+            <li class="py-[10px] px-0 text-sm">Paid</li>
+            <li class="py-[10px] px-0 text-sm">7Day Trial</li>
+          </ul>
+
+          <!-- company grid -->
+
+          <ul class="max-w-[230px] pb-10">
+            <h3 class="py-3 text-[#E76927] font-bold">COMPANY</h3>
+            <li class="py-[10px] px-0 text-sm">About Us</li>
+            <li class="py-[10px] px-0 text-sm">Notification</li>
+            <li class="py-[10px] px-0 text-sm">Customer Support</li>
+          </ul>
+        </div>
+
+        <p className=" text-[#B3B3B3] text-sm mx-8">
+          © 2022. All Right Reserved, INsure Technologies. A Salesforce Company.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // fetch('header.html')
+      //     .then(response => response.text())
+      //     .then(data => {
+      //         document.getElementById('header-container').innerHTML = data;
+      // });
+
+      // fetch('footer.html')
+      //     .then(response => response.text())
+      //     .then(data => {
+      //         document.getElementById('footer-container').innerHTML = data;
+      // });
+
+      const heroImg = document.querySelector('#hero-section')
+      const tagMessage = document.querySelector('#description')
+
+// Define background variables
+let index = 0;
+const backgroundData = [
+    {
+        coverImg: "assets/home/bg-one.svg",
+        description: "...your Key to Insurance Sales Excellence. Elevate your agency's performance, close more deals, and boost profits with our cutting-edge sales management tool."
+    },
+    {
+        coverImg: "assets/home/bg-two.svg",
+        description: "...your Insurance Sales, Elevated. Elevate your agency's sales game, simplify processes, and drive profitability with our all-in-one management tool."
+    },
+    {
+        coverImg: "assets/home/bg-three.svg",
+        description: "...your Path to Profitable Insurance Sales. Unlock success, streamline processes, and boost your agency's growth with our powerful sales management tool."
+    }
+];
+
+// Function to update the background-image and content
+
+function updateBackground() {
+    const currentBackground = backgroundData[index];
+    heroImg.style.backgroundImage = `url('${currentBackground.coverImg}')`;
+    tagMessage.textContent = `${currentBackground.description}`
+}
+
+// Interval to change the background and content
+
+const intervalId = setInterval(() => {
+    index = (index + 1) % backgroundData.length;
+    updateBackground();
+}, 3000);
+
+  </script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script src="script.js"></script>
+   <script>
+     AOS.init();
+   </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration page</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 flex h-screen">
+    <div class="min-h-screen flex rounded-lg  w-full md:w-32  xl:w-full flex-col md:flex-row">
+      <div
+        class=" rounded-lg  w-full md:w-32  xl:w-full flex flex-col md:flex-row"
+      >
+        <div class="w-1/2 p-8">
+          <img
+            src="./assets/Insure/INsure Logo.png"
+            alt="INsure logo"
+            class="ml-1 mt-1 mb-10"
+          />
+          <div class="mx-2 my-2">
+            <h1 class="font-bold mb-4 text-center pt-10 text-4xl">
+              Register with <span class="text-red-500"> INsure</span>
+            </h1>
+            <p class="text-center pb-10">
+              Get started - <span class="text-red-500">7</span> day free trial
+            </p>
+          </div>
+          <form name="signUpData" onsubmit="signUP(event)" class="shadow-md px-50">
+            <div class="mb-4 flex">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Comapny name"
+                class="w-full px-3 py-2 border rounded-md shadow-md shadow-slate-400 mb-5 mr-2"
+              />
+            </div>
+            <div class="mb-4">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="companyemail@gmail.com"
+                class="w-full px-3 py-2 border rounded-md shadow-md shadow-slate-400 mb-5"
+              />
+            </div>
+            <div class="mt-6">
+              <button
+                type="submit"
+                class="w-full bg-orange-600 text-white font-bold py-2 px-4 rounded-md hover:bg-orange-400"
+              >
+                Register
+              </button>
+              <p class="justify-center mt-3 mb-36 ml-36">
+                By proceeding, you agree to the <br />
+                <a href="#"
+                  ><span class="text-blue-500">Terms of services</span></a
+                >
+                and
+                <a href="#"
+                  ><span class="text-blue-500">privacy policy</span></a
+                >
+              </p>
+              <p class="justify-center mt-3 ml-36">
+                Already have an account?
+                <a href="./login.html">
+                  <span class="text-red-500 cursor-pointer"> Login</span></a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+        <!-- Right Column (image)  -->
+
+        <div class="md:w-1/2 hidden md:block">
+          <img
+            src="./assets/user authentication/Multiethnic leaders greeting each other in city.png"
+            alt="Registration Image"
+            class="w-full lg:w-full h-auto object-cover"
+            width="400"
+            height="300"
+          />
+        </div>
+      </div>
+    </div>
+    <script  src="auth.js"></script>
+  </body>
+</html>

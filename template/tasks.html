@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tasks Page</title>
+    <style>
+        /* Sidebar item styles */
+        .sidebar-item {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Sidebar item hover state */
+        .sidebar-item:hover {
+            background-color: #ee7d14;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-lato">
+
+<div class="flex">
+ <!-- Sidebar -->
+ <div class="bg-zinc-300 text-black h-screen w-1/5 p-4">
+    <ul class="space-y-4">
+        <li class="flex items-center space-x-2 sidebar-item">
+          <i class="fa-solid fa-gauge"></i>
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="flex items-center space-x-2 sidebar-item">
+          <i class="fa-regular fa-calendar"></i>
+            <a href="#">Events</a>
+        </li>
+        <li class="flex items-center space-x-2 sidebar-item">
+          <i class="fa-solid fa-plus"></i>
+            <a href="#">Statistics</a>
+        </li>
+        <li class="mt-auto flex items-center space-x-2 sidebar-item">
+          <i class="fa-solid fa-gear"></i>
+            <a href="#">Settings</a>
+        </li>
+        <li class="flex items-center space-x-2 sidebar-item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#">Sign Out</a>
+        </li>
+    </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="w-3/5 p-4">
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-8 flex justify-between items-center">
+      <div class="text-black text-sm font-medium flex items-center space-x-28">
+          <a class="hover:text-purple-500
+          hover:underline" href="#">My Projects</a>
+          <a class="hover:text-purple-500
+          hover:underline" href="#">Planning</a>
+          <a class="hover:text-purple-500
+          hover:underline" href="#">Teams</a>
+      </div>
+      <div class="flex items-center space-x-4">
+          <input type="text" placeholder="Search Project Name"
+           class="border border-gray-300 rounded-md px-4 py-2 w-64 ">
+      </div>
+    </header>
+    <!-- Boxes -->
+  <div class="flex space-x-4 mt-4">
+    <!-- Box 1 -->
+    <div class="bg-orange-500 w-1/3 h-36 p-4 rounded-lg text-white flex items-center">
+        <i class="fa-solid fa-list-check h-8 w-8 mr-2"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor"></i>
+        <div>
+            <p class="text-xl font-semibold">Tasks in Progress</p>
+            <p class="text-sm">Continue your Tasks</p>
+        </div>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="bg-purple-500 w-1/3 h-36 p-4 rounded-lg text-white flex items-center">
+        <i class="fa-solid fa-file-circle-plus h-8 w-8 mr-2"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor"></i>
+        <div>
+            <p class="text-xl font-semibold">New Assigned</p>
+            <p class="text-sm">Check out your New Assignment</p>
+        </div>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="bg-blue-500 w-1/3 h-36 p-4 rounded-lg text-white flex items-center">
+        <i class="fa-solid fa-list h-8 w-8 mr-2"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor"></i>
+        <div>
+            <p class="text-xl font-semibold">Project Completed</p>
+            <p class="text-sm">Welldone. Here are your finished projects</p>
+        </div>
+    </div>
+</div>
+   
+       
+    <!-- Tasks Section -->
+    <div class="flex items-end mt-8 space-x-4">
+        <div class="w-3/4">
+            <h3 class="text-black text-xl font-bold">My Tasks</h3>
+        </div>
+        <div class="w-1/4 text-right">
+            <button class="bg-purple-500 text-white rounded-full py-2 px-4 
+            hover:bg-purple-600 font-semibold">+ Add Tasks</button>
+        </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex justify-start items-center mt-4">
+        <nav class="flex space-x-4">
+            <a href="/in-progress" class="text-black font-bold hover:text-purple-500
+            hover:underline">In Progress</a>
+            <a href="/not-assigned" class="text-black font-bold hover:text-purple-500 
+            hover:underline">Not Assigned</a>
+        </nav>
+    </div>
+
+    <!-- Horizontal Boxes with Box Shadows -->
+    <div class="mt-4 space-y-4">
+        <!-- Box 1 -->
+        <div class="bg-gray-100 p-4 rounded-lg flex items-center space-x-4 shadow-md">
+            <i class="fa-solid fa-diagram-project text-blue-500"></i>
+            <div class="flex-grow">
+                <p class="font-semibold">Project Lane 1</p>
+                <p class="text-sm">Attend to client one</p>
+            </div>
+            <i class="fa-solid fa-circle text-blue-500"></i>
+            <i class="fa-solid fa-circle text-green-500"></i>
+            <i class="fa-solid fa-circle text-purple-500"></i>
+            <i class="fa-solid fa-circle text-orange-500"></i>
+            <div>
+                <p class="font-semibold">Progress</p>
+                <p class="text-sm text-blue-500 font-semibold">70%</p>
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="bg-gray-100 p-4 rounded-lg flex items-center space-x-4 shadow-md">
+            <i class="fa-solid fa-inbox text-blue-500"></i>
+            <div class="flex-grow">
+                <p class="font-semibold">Project Lane 2</p>
+                <p class="text-sm">Attend to client two</p>
+            </div>
+            <i class="fa-solid fa-circle text-blue-500"></i>
+            <i class="fa-solid fa-circle text-green-500"></i>
+            <i class="fa-solid fa-circle text-purple-500"></i>
+            <i class="fa-solid fa-circle text-orange-500"></i>
+            <div>
+                <p class="font-semibold">Progress</p>
+                <p class="text-sm text-blue-500 font-semibold">50%</p>
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="bg-gray-100 p-4 rounded-lg flex items-center space-x-4 shadow-md">
+            <i class="fa-solid fa-business-time text-purple-500"></i>
+            <div class="flex-grow">
+                <p class="font-semibold">Project Lane 3</p>
+                <p class="text-sm">Attend to client three</p>
+            </div>
+            <i class="fa-solid fa-circle text-blue-500"></i>
+            <i class="fa-solid fa-circle text-green-500"></i>
+            <i class="fa-solid fa-circle text-purple-500"></i>
+            <i class="fa-solid fa-circle text-orange-500"></i>
+            <div>
+                <p class="font-semibold">Progress</p>
+                <p class="text-sm text-blue-500 font-semibold">90%</p>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+  <!-- User Info in the Top Right Corner -->
+  <div class="w-1/5 p-4">
+      <div class="bg-white shadow-md p-4 rounded-lg flex items-center space-x-2">
+          <img src="/assets/task/womanpic1.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
+          <div>
+              <p class="text-gray-800 font-semibold">Iria Iyanuoluwa</p>
+              <p class="text-xs text-gray-600">Agent</p>
+          </div>
+      </div>
+        <!-- Team Section -->
+        <div class="mt-4">
+            <div class="flex items-center space-x-2 pt-6">
+                <p class="text-black font-bold pb-4">Team</p>
+                <p class="text-purple-500 pb-4 cursor-pointer">(25)</p>
+                <p class="text-purple-500 pb-4 cursor-pointer  pl-16 ml-2 ">View All</p>
+            </div>
+            <div class="flex items-center space-x-2 mt-2">
+                <div class="flex space-x-1">
+                    <img src="/assets/task/womanpic1.jpg" alt="Circle 1" 
+                    class="w-10 h-10 rounded-full">
+                    <img src="/assets/task/girl picture 5.jpeg" alt="Circle 2" 
+                    class="w-10 h-10 rounded-full">
+                    <img src="/assets/task/girl picture 4.jpeg" alt="Circle 3"
+                     class="w-10 h-10 rounded-full">
+                    <img src="/assets/task/girl picture 3.jpeg" alt="Circle 4" 
+                    class="w-10 h-10 rounded-full">
+                    <img src="/assets/task/girl picture 2.jpeg" alt="Circle 5" 
+                    class="w-10 h-10 rounded-full">
+                </div>
+            </div>
+        </div>
+        <!-- Calendar -->
+        <div class="mt-4 space-x-4 pt-6">
+            <p class="text-gray-600 font-semibold text-xl">Calender</p>
+            <p class="text-black font-semibold text-xl">September 2023</p>
+            <!-- Calendar Days -->
+            <div class="flex space-x-2">
+                <!-- Monday to Sunday -->
+                <div class="text-center">
+                    <p class="text-gray-600">Mon</p>
+                    <p class="font-semibold">20</p>
+                </div>
+                <!-- Tuesday -->
+        <div class="text-center">
+            <p class="text-gray-600">Tue</p>
+            <p class="font-semibold">21</p>
+        </div>
+        <!-- Wednesday -->
+        <div class="text-center">
+            <p class="text-gray-600">Wed</p>
+            <p class="font-semibold">22</p>
+        </div>
+        <!-- Thursday -->
+        <div class="text-center">
+            <p class="text-gray-600">Thu</p>
+            <p class="font-semibold text-purple-500">23</p> <!-- Highlighted day -->
+        </div>
+        <!-- Friday -->
+        <div class="text-center">
+            <p class="text-gray-600">Fri</p>
+            <p class="font-semibold">24</p>
+        </div>
+        <!-- Saturday -->
+        <div class="text-center">
+            <p class="text-gray-600">Sat</p>
+            <p class="font-semibold">25</p>
+        </div>
+        <!-- Sunday -->
+        <div class="text-center">
+            <p class="text-gray-600">Sun</p>
+            <p class="font-semibold">26</p>
+        </div>
+            </div>
+            <!-- Recent Activity and View All -->
+            <div class="mt-4">
+                <div class="flex items-center space-x-2 pt-6">
+                    <p class="text-black font-bold pb-2 text-medium">Recent Activity</p>
+                    <p class="text-purple-500 pb-2 cursor-pointer  pl-10 ml-1 ">View All</p>
+                </div>
+<div class="mt-1">
+    <!-- First Activity Box -->
+    <div class="bg-white p-4 rounded-lg flex items-center space-x-2 shadow-md mb-4">
+        <img src="/assets/task/womanpic1.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
+        <div>
+            <p class="font-semibold">Ogbaje Prince</p>
+            <p class="text-gray-500">Today by 10:00am</p>
+            <p class="text-black font-bold">Closed a Sale</p>
+        </div>
+    </div>
+
+    <!-- Second Activity Box -->
+    <div class="bg-white p-4 rounded-lg flex items-center space-x-2 shadow-md">
+        <img src="/assets/task/womanpic2.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
+        <div>
+            <p class="font-semibold">Divine Oluwakemi</p>
+            <p class="text-gray-500">Today by 10:00am</p>
+            <p class="text-black font-bold">Closed a Sale</p>
+        </div>
+    </div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
