@@ -1,15 +1,27 @@
+// for the navbar
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("navbar-toggle");
   const menu = document.getElementById("navbar-dropdown");
-
-  const dropdownButton = document.getElementById("dropdownNavbarLink");
-  const dropdownMenu = document.getElementById("dropdownNavbar");
-
-  dropdownButton.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
-  });
 
   button.addEventListener("click", function () {
     menu.classList.toggle("hidden");
   });
 });
+
+const navbar = document.getElementById("navbar");
+const img2 = document.getElementById("myImage2");
+
+window.addEventListener("scroll", () => {
+  const imgElement = document.getElementById("myImage");
+  if (window.scrollY > 50) {
+    navbar.classList.remove("bg-transparent", "text-[#ffffff]");
+    navbar.classList.add("bg-white", "text-[#ff4500]");
+    imgElement.src = "./assets/Insure/INsure Logo.png";
+  } else {
+    navbar.classList.remove("bg-white", "text-[#ff4500]");
+    navbar.classList.add("bg-transparent", "text-[#ffffff]");
+    imgElement.src = "./assets/Insure/2-removebg-preview.png";
+  }
+});
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration page</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+   
+  </head>
+  <body class="bg-gray-100 flex h-screen font-Lato">
+    <div class="min-h-screen flex rounded-lg w-full md:w-32 xl:w-full flex-col md:flex-row">
+      <div class="rounded-lg w-full md:w-32 xl:w-full flex flex-col md:flex-row">
+        <div class="w-full p-4 md:w-1/2 xl:p-8">
+          <img
+            src="./images/logo_img.png"
+            alt="INsure logo"
+            class="ml-1 mt-1 mb-10"
+          />
+          <div class="mx-2 my-2">
+            <h1 class="font-bold mb-4 px-4 md:px-10 pt-4 md:pt-10 text-4xl text-center">
+              Set New password
+            </h1>
+            <p class="px-10">Must be at least 8 characters</p>
+          </div>
+          <form class=" px-50" >
+            <div class="mt-6 px-10 w-full">
+                <input type="password" placeholder=" Enter new password" required class="w-full border mb-2 border-gray-300 rounded-md shadow-md shadow-slate-400 px-4 py-2">
+                 <!-- <i class="fa-regular fa-eye-slash absolute bottom-2\5 right-0/5 translate-y-2/4 "></i>          -->
+              </div>
+              <div class="mt-6 px-10 w-full" id="eye">
+                <input type="password" placeholder="Confirm password" required class="w-full border border-gray-300 rounded-md shadow-md shadow-slate-400 px-4 py-2">
+                <!-- <i class="fa-regular fa-eye-slash absolute -bottom-0\.5 mr-20"></i>         -->
+              </div>
+
+            <div class="mt-6 px-10 w-full">
+                <button
+                type="submit"
+                class="w-full bg-orange-600 text-white font-bold mb-10 mt-16 py-2 px-4 rounded-md hover:bg-orange-400"
+              >
+                Reset password
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- Right Column (image)  -->
+
+        <div class="md:w-1/2 hidden md:block" style="background-image: url('../template/images/pw_img.png');">
+          <!-- <img
+            src="../template/images/pw_img.png"
+            alt="Registration Image"
+            class="w-full lg:w-full h-auto object-cover"
+            width="400"
+            height="300"
+          /> -->
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/template/authen.js"></script>
+  </body>
+</html>

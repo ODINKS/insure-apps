@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Euvola Dashboard</title>
+    <title>Agent Report</title>
     <link rel="stylesheet" href="output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +24,7 @@
     <aside class="hidden sm:flex sm:flex-col bg-white shadow-xl px-5 py-10">
       <a href="#" class="inline-flex items-center justify-center h-20 w-30">
         <img
-          src="../template/assets/Insure/INsure Logo.png"
+          src="./assets/Insure/INsure Logo.png"
           alt="Insure"
           class="h-12 w-12 object-cover"
         />
@@ -114,7 +114,7 @@
             <div class="text-blue-600 text-lg ml-2">Tasks</div>
           </a>
           <a
-            href="#"
+            href="./agentClients.html"
             class="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-100 focus:bg-gray-200 rounded-lg"
           >
             <span class="sr-only">Clients</span>
@@ -328,7 +328,11 @@
               class="relative p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full"
             >
               <span class="sr-only">Profile Picture</span>
-              <img src="../template/assets/agentDashImage/profilePic.png" alt="User" class="h-7 w-7" />
+              <img
+                src="./assets/agentDashImage/profilePic.png"
+                alt="User"
+                class="h-7 w-7"
+              />
             </button>
           </div>
         </div>
@@ -338,10 +342,10 @@
           class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between"
         ></div>
         <section
-          class="grid md:grid-cols-2 -translate-y-6 xl:grid-cols-3 h-max gap-6"
+          class="grid  -translate-y-6 xl:grid-cols-3 grid-cols-1 h-max gap-6"
         >
           <div
-            class="flex flex-col items-center col-span-2 p-8 bg-white shadow-xl rounded-lg"
+            class="flex flex-col items-center col-span-2 p-8 bg-white shadow-xl rounded-lg "
           >
             <h2 class="text-left text-4xl"><b>Sales Report</b></h2>
             <div class="flex gap-5 bg-white shadow-md rounded-md py-5 px-7">
@@ -364,7 +368,7 @@
                 class="bg-gray-500 text-white p-2 flex flex-row justify-center items-center"
               >
                 <!-- drop down -->
-                <div class="mr-6 ">
+                <div class="mr-6">
                   <form action="#">
                     <select
                       name="days"
@@ -404,58 +408,29 @@
               </div>
               <!-- div for the select and input ends -->
 
-              <table class="border border-gray-300 w-full my-8">
+              <!-- table begins -->
+              <table id="table-data" class="border border-gray-300 w-full my-8">
                 <!-- Table Head -->
                 <thead>
-                    <tr class="rounded-lg bg-orange-500 text-white pt-6">
-                        <th class="">S/N</th>
-                        <th class="">Policy No.</th>
-                        <th class="">Name</th>
-                        <th class="">Date</th>
-                        <th class="">Status</th>
-                    </tr>
+                  <tr class="rounded-lg bg-orange-500 text-white pt-6">
+                    <th class="">S/N</th>
+                    <th class="">Policy No.</th>
+                    <th class="">Name</th>
+                    <th class="">Date</th>
+                    <th class="">Status</th>
+                  </tr>
                 </thead>
                 <!-- Table Body -->
-                <tbody>
-                    <!-- 1 -->
-                    <tr class="border-b pl-10">
-                        <td class="pl-10">1</td>
-                        <td class="pl-10">MT/223/1092</td>
-                        <td class="pl-10">Ese Vic</td>
-                        <td class="pl-10">27/05/23</td>
-                        <td class="pl-10">Active</td>
-                    </tr>
-                    <!-- 2 -->
-                    <tr class="border-b ">
-                        <td class="pl-10">2</td>
-                        <td class="pl-10">MT/223/1093</td>
-                        <td class="pl-10">Kelly Adewale</td>
-                        <td class="pl-10">28/05/23</td>
-                        <td class="pl-10">Active</td>
-                    </tr>
-                    <!-- 3 -->
-                    <tr class="border-b">
-                        <td class="pl-10">3</td>
-                        <td class="pl-10">MT/223/1094</td>
-                        <td class="pl-10">Kanayo Prince</td>
-                        <td class="pl-10">29/05/23</td>
-                        <td class="pl-10">Active</td>
-                    </tr>
-                    <!-- 4 -->
-                    <tr class="border-b">
-                        <td class="pl-10">4</td>
-                        <td class="pl-10">MT/223/1095</td>
-                        <td class="pl-10">Ademide Gabriel</td>
-                        <td class="pl-10">29/05/23</td>
-                        <td class="pl-10">Active</td>
-                    </tr>
+                <tbody id="table-body">
+                  <!-- table body here  -->
                 </tbody>
-            </table>
+              </table>
+              <!-- table ends -->
             </div>
           </div>
 
           <div
-            class="flex flex-col justify-center overflow-y-scroll gap-5 items-center p-8 bg-white shadow-xl rounded-lg"
+            class="flex flex-col justify-center overflow-y-scroll gap-5 items-center p-8 bg-white shadow-xl rounded-lg "
           >
             <div class="w-full rounded-md shadow-2xl p-5">
               <h4 class="text-2xl mb-4">Sales</h4>
@@ -496,5 +471,84 @@
         </section>
       </main>
     </div>
+
+    <script>
+      // creating the arrayData for the table
+      let data = [
+        {
+          sn: 1,
+          policyNumber: "MT/223/1092",
+          name: "Ese Vic",
+          date: "27/05/23",
+          status: "Active",
+        },
+        {
+          sn: 2,
+          policyNumber: "MT/223/1093",
+          name: "John Adewale",
+          date: "28/05/23",
+          status: "Pending",
+        },
+        {
+          sn: 3,
+          policyNumber: "MT/223/1094",
+          name: "James Prince",
+          date: "29/05/23",
+          status: "Active",
+        },
+        {
+          sn: 4,
+          policyNumber: "MT/223/1095",
+          name: "Ademide Glory",
+          date: "29/05/23",
+          status: "Pending",
+        },
+        {
+          sn:5,
+          policyNumber: "MK/224/1096",
+          name: "John James",
+          date: "01/10/23",
+          status: "Active"
+        }
+      ];
+
+      // function to store data in the local storage
+      let storeData = () => {
+        localStorage.setItem("tableData", JSON.stringify(data));
+      };
+
+      // function to generate table
+      let generateTable = () => {
+        let tableBody = document.getElementById("table-body");
+
+        tableBody.innerHTML = "";
+
+        data.forEach((item) => {
+          let tableRows = `<tr class="border-b pl-10">
+                    <td class="pl-10">${item.sn}</td>
+                    <td class="pl-10">${item.policyNumber}</td>
+                    <td class="pl-10">${item.name}</td>
+                    <td class="pl-10">${item.date}</td>
+                    <td class="pl-10">${item.status}</td>
+                </tr>`;
+
+          tableBody.innerHTML += tableRows;
+        });
+      };
+
+      // function to retrieveData
+      let retrieveData = () => {
+        let storedData = localStorage.getItem("tableData");
+
+        if (storeData) {
+          data.JSON.parse(storeData);
+          generateTable();
+        }
+      };
+
+      generateTable();
+      storeData();
+      retrieveData();
+    </script>
   </body>
 </html>

@@ -61,7 +61,7 @@
           </svg>
           <div class="text-blue-600 text-lg ml-2">Tasks</div>
         </a>
-        <a href="#"
+        <a href="./agentClients.html"
           class="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-100 focus:bg-gray-200  rounded-lg">
           <span class="sr-only">Clients</span>
           <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -251,53 +251,23 @@
         <div class=" items-center p-8 bg-white shadow rounded-lg">
           <h1>Sales Report</h1>
 
-          <table class="border border-gray-300 w-full">
-            <!-- Table Head -->
-            <thead>
+            <!-- table -->
+            <table id="table-data" class="border border-gray-300 w-full my-8">
+              <!-- Table Head -->
+              <thead>
                 <tr class="rounded-lg bg-orange-500 text-white pt-6">
-                    <th class="">S/N</th>
-                    <th class="">Policy No.</th>
-                    <th class="">Name</th>
-                    <th class="">Date</th>
-                    <th class="">Status</th>
+                  <th class="">S/N</th>
+                  <th class="">Policy No.</th>
+                  <th class="">Name</th>
+                  <th class="">Date</th>
+                  <th class="">Status</th>
                 </tr>
-            </thead>
-            <!-- Table Body -->
-            <tbody>
-                <!-- 1 -->
-                <tr class="border-b pl-10">
-                    <td class="pl-10">1</td>
-                    <td class="pl-10">MT/223/1092</td>
-                    <td class="pl-10">Ese Vic</td>
-                    <td class="pl-10">27/05/23</td>
-                    <td class="pl-10">Active</td>
-                </tr>
-                <!-- 2 -->
-                <tr class="border-b ">
-                    <td class="pl-10">2</td>
-                    <td class="pl-10">MT/223/1093</td>
-                    <td class="pl-10">Kelly Adewale</td>
-                    <td class="pl-10">28/05/23</td>
-                    <td class="pl-10">Active</td>
-                </tr>
-                <!-- 3 -->
-                <tr class="border-b">
-                    <td class="pl-10">3</td>
-                    <td class="pl-10">MT/223/1094</td>
-                    <td class="pl-10">Kanayo Prince</td>
-                    <td class="pl-10">29/05/23</td>
-                    <td class="pl-10">Active</td>
-                </tr>
-                <!-- 4 -->
-                <tr class="border-b">
-                    <td class="pl-10">4</td>
-                    <td class="pl-10">MT/223/1095</td>
-                    <td class="pl-10">Ademide Gabriel</td>
-                    <td class="pl-10">29/05/23</td>
-                    <td class="pl-10">Active</td>
-                </tr>
-            </tbody>
-        </table>
+              </thead>
+              <!-- Table Body -->
+              <tbody id="table-body">
+                <!-- table body here  -->
+              </tbody>
+            </table>
         
 
         </div>
@@ -306,7 +276,85 @@
     </main>
   </div>
 
+  <!-- script for the dynamic table data -->
+  <script>
+    // creating the arrayData for the table
+    let data = [
+      {
+        sn: 1,
+        policyNumber: "MT/223/1092",
+        name: "Ese Vic",
+        date: "27/05/23",
+        status: "Active",
+      },
+      {
+        sn: 2,
+        policyNumber: "MT/223/1093",
+        name: "John Adewale",
+        date: "28/05/23",
+        status: "Pending",
+      },
+      {
+        sn: 3,
+        policyNumber: "MT/223/1094",
+        name: "James Prince",
+        date: "29/05/23",
+        status: "Active",
+      },
+      {
+        sn: 4,
+        policyNumber: "MT/223/1095",
+        name: "Ademide Glory",
+        date: "29/05/23",
+        status: "Pending",
+      },
+      {
+        sn:5,
+        policyNumber: "MK/224/1096",
+        name: "John James",
+        date: "01/10/23",
+        status: "Active"
+      }
+    ];
 
+    // function to store data in the local storage
+    let storeData = () => {
+      localStorage.setItem("tableData", JSON.stringify(data));
+    };
+
+    // function to generate table
+    let generateTable = () => {
+      let tableBody = document.getElementById("table-body");
+
+      tableBody.innerHTML = "";
+
+      data.forEach((item) => {
+        let tableRows = `<tr class="border-b pl-10">
+                  <td class="pl-10">${item.sn}</td>
+                  <td class="pl-10">${item.policyNumber}</td>
+                  <td class="pl-10">${item.name}</td>
+                  <td class="pl-10">${item.date}</td>
+                  <td class="pl-10">${item.status}</td>
+              </tr>`;
+
+        tableBody.innerHTML += tableRows;
+      });
+    };
+
+    // function to retrieveData
+    let retrieveData = () => {
+      let storedData = localStorage.getItem("tableData");
+
+      if (storeData) {
+        data.JSON.parse(storeData);
+        generateTable();
+      }
+    };
+
+    generateTable();
+    storeData();
+    retrieveData();
+  </script>
   
 </body>
 

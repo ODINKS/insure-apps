@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signup</title>
+    <link rel="stylesheet" href="output.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <style>
+        .input-element::placeholder {
+            font-size: 1.188rem;
+        }
+
+        .input-element:focus {
+            border: 1px solid #1E90FF;
+            outline: none;
+        }
+
+        .eye-toggle {
+            border: 1px solid black;
+
+
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen] font-Lato">
+    <main class="flex flex-row w-full pl-[6rem] border-gray-950">
+        <!-- Left -->
+        <div class="h-screen w-[50%]">
+            <img src="./assets/user authentication/insure-logo.png" alt="Insure Logo" class="w-24 h-14 mb-12 mt-3">
+            <h2 class="mb-4 text-[2.8rem]">Set up your account</h2>
+            <!-- Form -->
+            <form action="" class="" onsubmit="submitForm(event)">
+                <!-- Fullname -->
+                <label for="fullname" class="block mb-2 text-xl text-gray-500">Fullname</label>
+                <input type="text" name="fullname" id="fullname" placeholder="Enter your fullname (Admin)"
+                    class="input-element block border border-gray-500 w-[24rem] h-12 rounder-lg rounded-md pl-3">
+                <span id="empty-field-error-text-1" class="block ml-[13rem] text-[#DB1818] hidden">field must not be
+                    empty</span>
+                <!-- Password -->
+                <div class="mt-[1rem] relative w-[25rem]" id="label-password">
+                    <label for="fullname" class="block mb-2 text-xl text-gray-500">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password"
+                        class="input-element block border border-gray-500 border-b- w-[24rem] h-12 rounded-md pl-3">
+                    <!-- Eye toggle password -->
+                    <span id="eye-toggle-1" onclick="showPassword('password','1')"
+                        class="block text-[1.2rem] text-center absolute top-[52%] right-[10%]"><img
+                            src="./assets/user authentication/eye-regular.svg" id="eye-toggle-image-1" class="w-[1.2rem] h-[2rem]"></span>
+                    <span id="eye-toggle-slash-1" onclick="hidePassword('password','1')"
+                        class="block text-[1.2rem] absolute top-[52%] right-[9.9%] hidden"><img
+                            src="./assets/user authentication/eye-slash-regular.svg" id="eye-toggle-slash-image-1"
+                            class="w-[1.3rem] h-[2rem]"></span>
+                </div>
+                <!-- <span class="eye-toggle absolute">p</span> -->
+                <span id="empty-field-error-text-2" class="ml-[13rem] text-[#DB1818] hidden">field must not be
+                    empty</span>
+                <span id="password-error-text-1" class=" block w-[24rem] text-[#DB1818] text-[0.8rem] hidden">Must be 8 or more characters and
+                    contain at least 1 number and 1 special
+                    character.</span>
+
+                <!-- Confirm Password -->
+                <div class="mt-[1rem] relative w-[25rem]" id="label-cPassword">
+                    <label for="cPassword" class="block mb-2 text-xl text-gray-500">Confirm
+                        password</label>
+                    <input type="password" name="cPassword" id="cPassword" placeholder="Confirm your password"
+                        class="input-element block border border-b border-gray-500 w-96 h-12 rounded-md pl-3">
+                    <!-- Eye toggle cpassword -->
+                    <span id="eye-toggle-2" onclick="showPassword('cPassword','2')"
+                        class=" block text-[1.2rem] absolute top-[52%] right-[10%]"><img src="./assets/user authentication/eye-regular.svg"
+                            id="eye-toggle-image-2" class="w-[1.2rem] h-[2rem]"></span>
+                    <span id="eye-toggle-slash-2" onclick="hidePassword('cPassword','2')"
+                        class="block text-[1.2rem] absolute top-[52%] right-[9.9%] hidden"><img
+                            src="./assets/user authentication/eye-slash-regular.svg" id="eye-toggle-slash-image-2"
+                            class="w-[1.3rem] h-[2rem]"></span>
+                </div>
+                <span id="empty-field-error-text-3" class="ml-[13rem] text-[#DB1818] hidden">field must not be
+                    empty</span>
+                <span id="password-error-unmatch2" class="block ml-[12.5rem] text-[#DB1818] hidden">Password does not match.</span>
+                <button type="submit" class="ml-96 px-5 py-2 rounded bg-orange-600 text-white mt-[4rem] cursor-pointer" id="continue-button">Continue
+                    ></button>
+            </form>
+        </div>
+        <!-- Right image-->
+        <img src="./assets/user authentication/admin-signup.png" alt="Sign up image" class="w-[50%] h-[100vh]">
+    </main>
+</body>
+<script>
+    const fullname = document.getElementById('fullname')
+    const password = document.getElementById('password')
+    const cPassword = document.getElementById('cPassword')
+    const labelPassword = document.getElementById('label-password')
+    const labelCPassword = document.getElementById('label-cPassword')
+    let isError = false;
+    const continueButton = document.getElementById('continue-button')
+
+
+    //When the input fields are empty
+    function throwEmptyFieldError(inputId, textId, label, labelValue1, labelValue2) {
+        const inputField = document.getElementById(`${inputId}`)
+        const emptyField = document.getElementById(`empty-field-error-text-${textId}`)
+        inputField.style.borderColor = '#DB1818'
+        emptyField.style.display = 'block'
+        label.style.marginTop = labelValue2
+        // emptyField.style.visibility = 'visible'
+        const displayInterval = setInterval(() => {
+            emptyField.style.display = 'none'
+            label.style.marginTop = labelValue1
+            // emptyField.style.visibility = 'hidden'
+            inputField.style.borderColor = '#A9A9A9'
+            clearInterval(displayInterval)
+        }, 1000);
+
+    }
+
+
+    //Password Validation
+    function validatePassword(inputId, textId1, textId2, pattern, label, labelValue1, labelValue2) {
+        const inputField = document.getElementById(`${inputId}`)
+        const errorText = document.getElementById(`password-error-text-${textId1}`)
+        const unmatchedError = document.getElementById(`password-error-${textId2}`)
+
+        //Password validation using regex
+        if (!(pattern.test(inputField.value))) {
+            isError = true
+            errorText.style.display = 'block'
+            label.style.marginTop = labelValue2
+            const displayInterval = setInterval(() => {
+                errorText.style.display = 'none'
+                label.style.marginTop = labelValue1
+                clearInterval(displayInterval)
+            }, 3000);
+            //Password match
+        } else if (password.value !== cPassword.value) {
+            isError = true;
+            unmatchedError.style.display = 'block'
+            label.style.marginTop = labelValue2
+            const displayInterval = setInterval(() => {
+                unmatchedError.style.display = 'none'
+                label.style.marginTop = labelValue1
+                clearInterval(displayInterval)
+            }, 2000);
+        }
+
+    }
+
+    function storeData(fullname, password, cPassword){
+        let userDetail = {
+            fullname: fullname.value,
+            password: password.value
+        }
+        localStorage.setItem('admin', JSON.stringify(userDetail))
+    }
+
+    function showPassword(inputId, toggleId) {
+    const inputField = document.getElementById(`${inputId}`)
+    const eyeToggle = document.getElementById(`eye-toggle-${toggleId}`)
+    const eyeToggleSlash = document.getElementById(`eye-toggle-slash-${toggleId}`)
+    console.log(inputField);
+    if (inputField.type === 'password') {
+        inputField.type = 'text'
+        eyeToggle.style.display = 'none'
+        eyeToggleSlash.style.display = 'inline-block';
+    }
+}
+
+function hidePassword(inputId, toggleId) {
+    const inputField = document.getElementById(`${inputId}`)
+    const eyeToggle = document.getElementById(`eye-toggle-${toggleId}`)
+    const eyeToggleSlash = document.getElementById(`eye-toggle-slash-${toggleId}`)
+    if (inputField.type === 'text') {
+        inputField.type = 'password'
+        eyeToggle.style.display = 'inline-block'
+        eyeToggleSlash.style.display = 'none'
+    }
+
+}
+
+    //Submit form
+    function submitForm(event) {
+        event.preventDefault();
+        if (fullname.value === '') {
+            throwEmptyFieldError('fullname', '1', labelPassword, '1rem','-0.5rem')
+            return
+        }
+        if (password.value === '') {
+            throwEmptyFieldError('password', '2', labelCPassword, '1rem','-0.5rem');
+            return
+        }
+        if(cPassword.value === ''){
+            throwEmptyFieldError('cPassword', '3', continueButton,'4rem', '2.5rem')
+            return
+        }
+        const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        if (password.value) {
+            validatePassword('cPassword', '1', 'unmatch2', pattern, continueButton,'4rem', '2.5rem')
+            if (isError) {
+                isError = false;
+                return;
+            };
+        }
+        storeData(fullname, password, cPassword)
+        alert('Successful!');
+        location.href = './onboarding-team.html'
+
+    }
+
+</script>
+
+</html>

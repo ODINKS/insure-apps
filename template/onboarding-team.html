@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agent Capacity</title>
+    <link rel="stylesheet" href="output.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <style>
+        button.selected{
+            border: 1px solid #000;
+            
+        }
+    </style>
+</head>
+
+<body class="pl-[6rem] w-screen h-screen">
+    <main class="flex flex-row w-[100%]">
+        <!-- left section -->
+        <div class="w-[50%]">
+            <!-- Logo -->
+            <div><img src="./assets/user authentication/insure-logo.png" alt="insure-logo" class="w-24 h-14 mb-12 mt-3"></div>
+
+            <p class="text-4xl mb-6">What is the capacity of your team?</p>
+            <form class="" onsubmit="getTeamCapacity(event)">
+                <div class="flex flex-row flex-wrap w-[80%] gap-4 button-container mb-[7rem]">
+                    <button class="border border-[#A9A9A9] px-16 py-6 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,1)">1</button>
+                    <button class="border border-[#A9A9A9] px-12 py-6 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,2)">2 to 5</button>
+                    <button class="border border-[#A9A9A9] px-11 py-6 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,3)">6 to 10</button>
+                    <button class="border border-[#A9A9A9] px-10 py-6 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,4)">11 to 25</button>
+                    <button class="border border-[#A9A9A9] px-10 py-6 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,5)">26 to 50</button>
+                    <button class="border border-[#A9A9A9] px-[2.1rem] py-3 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,6)">51 to 200</button>
+                    <button class="border border-[#A9A9A9] px-[1.6rem] py-3 rounded text-[#A9A9A9] hover:opacity-40" onclick="selectButton(event,7)">201 to 1,000</button>
+                    <button class="border border-[#A9A9A9] px-[2.5rem] py-3 rounded text-[#A9A9A9] hover:opacity-40"onclick="selectButton(event,8)">1,000 to<br>10,000</button>
+                    <button class="border border-[#A9A9A9] px-[2.1rem] py-3 rounded text-[#A9A9A9] hover:opacity-40"onclick="selectButton(event,9)">10,001 or<br>more</button>
+                </div>
+                <button class="px-[0.75rem] py-[0.44rem] rounded bg-[#E76927] text-[#fff] mr-[23rem] hover:opacity-70"><a href="/signup-admin.html">< Back</a></button>
+                <button type="submit" class="px-[0.75rem] py-[0.44rem] rounded bg-[#E76927] text-[#fff] hover:opacity-70">Continue ></button>
+            </form>
+
+        </div>
+        <!-- Right image. -->
+        <img src="./assets/user authentication/agents.png" alt="Agents putting hands together" class="w-[50%] h-[100vh]">
+        <script>
+            function getTeamCapacity(event) {
+                event.preventDefault()
+                console.log('here');
+                alert('Selected')
+                window.location.href = "./homeAdminDashboard.html"
+            }
+
+
+            function selectButton(event, buttonIndex){
+                event.preventDefault()
+                const buttons = document.querySelectorAll('.button-container button');
+                buttons.forEach(button =>{
+                    button.classList.remove('selected');
+                })
+
+                buttons[buttonIndex - 1].classList.add('selected')
+                return buttonIndex - 1
+            }
+        </script>
+    </main>
+</body>
+
+</html>
