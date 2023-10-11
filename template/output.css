@@ -633,12 +633,16 @@ video {
   right: 0px;
 }
 
-.right-20{
-  right: 5rem;
-}
-
 .right-\[10\%\]{
   right: 10%;
+}
+
+.right-\[5\.8\%\]{
+  right: 5.8%;
+}
+
+.right-\[6\%\]{
+  right: 6%;
 }
 
 .right-\[9\.9\%\]{
@@ -657,64 +661,12 @@ video {
   top: 10%;
 }
 
-.top-\[52\%\]{
-  top: 52%;
-}
-
-.top-\[45\%\]{
-  top: 45%;
-}
-
-.top-\[40\%\]{
-  top: 40%;
-}
-
-.top-\[35\%\]{
-  top: 35%;
-}
-
-.top-\[30\%\]{
-  top: 30%;
-}
-
-.top-\[25\%\]{
-  top: 25%;
-}
-
-.top-\[20\%\]{
-  top: 20%;
-}
-
 .top-\[15\%\]{
   top: 15%;
 }
 
-.right-\[7\%\]{
-  right: 7%;
-}
-
-.right-\[6\%\]{
-  right: 6%;
-}
-
-.top-\[\%\]{
-  top: %;
-}
-
-.top-\[16\%\]{
-  top: 16%;
-}
-
-.right-\[5\%\]{
-  right: 5%;
-}
-
-.right-\[5\.5\%\]{
-  right: 5.5%;
-}
-
-.right-\[5\.8\%\]{
-  right: 5.8%;
+.top-\[52\%\]{
+  top: 52%;
 }
 
 .z-10{
@@ -910,6 +862,10 @@ video {
   margin-left: 13rem;
 }
 
+.ml-\[15\.5rem\]{
+  margin-left: 15.5rem;
+}
+
 .ml-\[16\.5rem\]{
   margin-left: 16.5rem;
 }
@@ -1008,34 +964,6 @@ video {
 
 .mt-\[4rem\]{
   margin-top: 4rem;
-}
-
-.ml-\[\]{
-  margin-left: ;
-}
-
-.ml-\[2rem\]{
-  margin-left: 2rem;
-}
-
-.ml-\[10rem\]{
-  margin-left: 10rem;
-}
-
-.ml-\[15rem\]{
-  margin-left: 15rem;
-}
-
-.ml-\[17rem\]{
-  margin-left: 17rem;
-}
-
-.ml-\[16rem\]{
-  margin-left: 16rem;
-}
-
-.ml-\[15\.5rem\]{
-  margin-left: 15.5rem;
 }
 
 .line-clamp-1{
@@ -1588,11 +1516,6 @@ video {
   border-color: var(--Orange1);
 }
 
-.border-\[black\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -2089,16 +2012,16 @@ video {
   font-size: 0.8rem;
 }
 
+.text-\[1\.1rem\]{
+  font-size: 1.1rem;
+}
+
 .text-\[1\.2rem\]{
   font-size: 1.2rem;
 }
 
 .text-\[1\.3rem\]{
   font-size: 1.3rem;
-}
-
-.text-\[1\.5rem\]{
-  font-size: 1.5rem;
 }
 
 .text-\[1rem\]{
@@ -3003,10 +2926,6 @@ video {
 
   .lg\:h-\[230px\]{
     height: 230px;
-  }
-
-  .lg\:h-\[50vh\]{
-    height: 50vh;
   }
 
   .lg\:h-\[60vh\]{
